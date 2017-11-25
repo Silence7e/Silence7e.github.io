@@ -89,5 +89,8 @@ pagination_dir: page
 theme: maupassant
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
+
 deploy:
-  type:
+  type: git
+  repo: git@github.com:Silence7e/Silence7e.github.io.git
+  branch: master

@@ -12,12 +12,8 @@ React、Redux、React-Router、React-Redux 、React-Router-Redux、Redux-Saga
 
 ### React
 
-
-
-A JavaScript library for building user interfaces
-一个用于构建用户界面的 JavaScript 库
-
-
+>A JavaScript library for building user interfaces
+>一个用于构建用户界面的 JavaScript 库
 
 ```javascript
 function Welcome(props) {
@@ -66,8 +62,9 @@ Virtual DOM最大的好处在于可以很方便的和其它平台集成，react-
 **数据流**
 
 **[Flux](https://github.com/facebook/flux)**
-An application architecture for React utilizing a unidirectional data flow.
-Flux 是一种让React使用单向数据流的架构思想。
+> An application architecture for React utilizing a unidirectional data flow.
+> Flux 是一种让React使用单向数据流的架构思想。
+
 {% asset_img flux2.png flux%}
 
 Flux主要包括四个部分: dispatcher, stores 和 views(React的组件)。
@@ -81,15 +78,16 @@ Flux主要包括四个部分: dispatcher, stores 和 views(React的组件)。
 
 
 ### Redux
-Redux is a predictable state container for JavaScript apps.
-Redux 是 JavaScript 状态容器，提供可预测化的状态管理。
+> Redux is a predictable state container for JavaScript apps.
+> Redux 是 JavaScript 状态容器，提供可预测化的状态管理。
 
 #### 三大原则
 **单一数据源**
-整个应用的 state 被储存在一棵 object tree 中，并且这个 object tree 只存在于唯一一个 store 中。
+> 整个应用的 state 被储存在一棵 object tree 中，并且这个 object tree 只存在于唯一一个 store 中。
 
 **State 是只读的**
-惟一改变 state 的方法就是触发 action，action 是一个用于描述已发生事件的普通对象。
+> 惟一改变 state 的方法就是触发 action，action 是一个用于描述已发生事件的普通对象。
+
 ```javascript
 store.dispatch({
   type: 'COMPLETE_TODO',
@@ -97,7 +95,8 @@ store.dispatch({
 });
 ```
 **使用纯函数来执行修改**
-它接收先前的 state 和 action，并返回新的 state
+> 它接收先前的 state 和 action，并返回新的 state
+
 ```javascript
 function todos(state = [], action) {
   switch (action.type) {
@@ -124,7 +123,8 @@ function todos(state = [], action) {
 }
 ```
 ####  Action
-Action 是把数据从应用传到 store 的有效载荷。它是 store 数据的唯一来源。
+> Action 是把数据从应用传到 store 的有效载荷。它是 store 数据的唯一来源。
+
 ```javascript
 const ADD_TODO = 'ADD_TODO'
 {
@@ -159,10 +159,12 @@ reducer 就是一个纯函数，接收旧的 state 和 action，返回新的 sta
 ```javascript
 (previousState, action) => newState
 ```
+
 保持 reducer 纯净非常重要。永远不要在 reducer 里做这些操作：
 - 修改传入参数；
 - 执行有副作用的操作，如 API 请求和路由跳转；
 - 调用非纯函数，如 Date.now() 或 Math.random()。
+
 ```javascript
 function todoApp(state = initialState, action) {
   switch (action.type) {
@@ -185,6 +187,7 @@ function todoApp(state = initialState, action) {
   }
 }
 ```
+
 ```javascript
 import { combineReducers } from 'redux';
 
@@ -195,10 +198,11 @@ const todoApp = combineReducers({
 
 export default todoApp;
 ```
+
 **注意每个 reducer 只负责管理全局 state 中它负责的一部分。每个 reducer 的 state 参数都不同，分别对应它管理的那部分 state 数据。**
 
 #### Store
- action 来描述“发生了什么”，reducers 来根据 action 更新 state.
+action 来描述“发生了什么”，reducers 来根据 action 更新 state.
 Store 就是把它们联系到一起的对象。Store 有以下职责：
 
 - 维持应用的 state；
@@ -258,12 +262,15 @@ Redux 和 React 之间没有关系。Redux 支持 React、Angular、Ember、jQue
 npm install --save react-redux
 ```
 **容器组件和展示组件**
-|      &nbsp   |    容器组件 | 展示组件  |
-| :--------: | :--------:| :--: |
+
+|        |    容器组件 | 展示组件  |
+|:--------:|:--------:|:--:|
 | Location  | 最顶层，路由处理 |  中间和子组件  |
 | Aware of Redux  | 是 | 否  |
 | 读取数据  | 从 Redux 获取 state|  从 props 获取数据  |
 | 修改数据  | 向 Redux 派发 actions |  从 props 调用回调函数  |
-###React-Router-Redux
+
+
+### React-Router-Redux
 
 react-router-redux 是将react-router 和 redux 集成到一起的库，让你可以用redux的方式去操作react-router。例如，react-router 中跳转需要调用 router.push(path)，集成了react-router-redux 你就可以通过dispatch的方式使用router，例如跳转可以这样做 store.dispatch(push(url))。本质上，是把react-router自己维护的状态，例如location、history、path等等，也交给redux管理。一般情况下，是没有必要使用这个库的。
