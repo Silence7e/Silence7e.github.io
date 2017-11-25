@@ -248,6 +248,8 @@ div {
         word-break: break-all; }
         .post .post-content p a:hover {
           text-decoration: underline; }
+    .post .post-content blockquote p:last-child {
+      margin-bottom: 0; }
     .post .post-content .caption {
       color: #444;
       display: block;
@@ -396,6 +398,8 @@ blockquote {
   margin: 0 0 1.1em;
   border-left: 10px solid rgba(102, 128, 153, 0.075);
   outline: none !important; }
+  blockquote p:last-child {
+    margin-bottom: 0; }
 
 blockquote:before, blockquote:after {
   content: " ";
@@ -1402,15 +1406,20 @@ table {
   background: transparent;
   border-collapse: collapse;
   border-spacing: 0;
-  text-align: left; }
-  table th {
-    font-weight: bold;
-    padding: 5px 10px;
-    border-bottom: 2px solid #909ba2; }
-  table td {
-    padding: 5px 10px; }
-  table tr:nth-child(2n) {
-    background: #f7f8f8; }
+  text-align: left;
+  /*tr {
+        &:nth-child(2n+1) {
+            background: #f7f8f8;
+        }
+    }*/ }
+  table th, table td {
+    padding: .5em;
+    border: 1px solid #ddd;
+    line-height: 1.5; }
+  table thead:first-child tr:first-child th {
+    padding: .5em;
+    border: 1px solid #ddd;
+    line-height: 1.5; }
 
 /* article-share*/
 .article-share-link {
