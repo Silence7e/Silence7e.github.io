@@ -6,9 +6,9 @@
     "version": "3.7.1"
   },
   "scripts": {
-    "deploy": "hexo clean && hexo g && hexo d",
+    "deploy": "hexo g && hexo d",
     "generate": "hexo generate",
-    "dev": "hexo generate && hexo server -s"
+    "dev": "hexo clean && hexo server"
   },
   "dependencies": {
     "hexo": "^3.4.4",
