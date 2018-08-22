@@ -96,7 +96,7 @@ div {
             padding: 3px 20px 3px;
             line-height: 30px;
             color: #444;
-            font-size: 13px;
+            font-size: 14px;
             border: 1px solid transparent;
             &:hover {
                 border-bottom-color: #444;
@@ -263,7 +263,7 @@ div {
     }
     .post-content {
         clear: left;
-        font-size: 15px;
+        font-size: 16px;
         line-height: 1.77;
         color: #444;
         padding-top: 15px;
@@ -420,7 +420,7 @@ div {
 
 /* for archive page starts*/
 .post-archive {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 2;
     padding-bottom: .8em;
     h2 {
@@ -459,7 +459,7 @@ div {
                 padding: 0 15px;
                 line-height: 27px;
                 height: 27px;
-                font-size: 13px;
+                font-size: 14px;
             }
         }
     }
@@ -705,7 +705,7 @@ pre {
     display: block;
 }
 #process .timeline-centered .timeline-entry .timeline-entry-inner .timeline-time > span:first-child {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
 }
 #process .timeline-centered .timeline-entry .timeline-entry-inner .timeline-time > span:last-child {
@@ -726,7 +726,7 @@ pre {
     text-align: center;
     border: 4px solid #F5F5F6;
     line-height: 40px;
-    font-size: 15px;
+    font-size: 16x;
     float: left;
     position: absolute;
     top: 50%;
@@ -883,10 +883,13 @@ pre {
 /* syntax highlight*/
 figure.highlight,
 .codeblock {
-    background:     #23241f;
     margin:         10px 0;
-    line-height:    1.1em;
-    color:          #f8f8f2;
+    line-height:    1.5;
+    background-color: rgba(102, 128, 153, 0.05);
+    background-image: linear-gradient(hsla(0, 0%,78%, 0.2) 50%, transparent 0);
+    background-size: auto 3em;
+    background-origin: content-box;
+    color:          #303641;
     padding-top:    15px;
     overflow:       hidden;
     font-family: "Source Code Pro",monospace;
@@ -900,7 +903,7 @@ figure.highlight,
     .code,
     .tag {
         background-color: inherit;
-        font-family: Menlo, Consolas, monospace;
+        font-family: Consolas, Monaco, monospace;
         border:      none;
         padding:     0;
         margin:      0;
@@ -920,7 +923,7 @@ figure.highlight,
     }
     // Meta bar which contains name of the file and his link
     figcaption {
-        font-size:     13px;
+        font-size:     14px;
         padding:       0 15px 20px;
         margin:        0;
         background:    #f7f8f8;
@@ -932,14 +935,13 @@ figure.highlight,
         }
     }
     // Gutter which contains line numbers
-    .gutter {
-        background:    #23241f;
-        color:         #7e715e;
+    .gutter {      
+        color:         #23241f;
         //border-right: 1px solid #e6e6e6;
-        padding:      0.3em 15px;
+        padding:      0 15px;
 
         .line {
-            color: #7e715e;
+            color: #23241f;
             &:after{
                 content: '.';
                 display: inline;
@@ -948,7 +950,7 @@ figure.highlight,
     }
     // Code container
     .code {
-        padding: 0.3em 15px 0.3em 1em;
+        padding: 0 15px 0 1em;
         width:   100%;
 
         pre {
@@ -959,8 +961,7 @@ figure.highlight,
     }
     // All lines in gutter and code container
     .line {
-        height:    1.3em;
-        font-size: 13px;
+        height:    1.5em;
     }
 }
 
@@ -981,16 +982,16 @@ figure.highlight,
         color: #969896;
     }
     .string {
-        color: #e6db74;
+        color: #fb3;
     }
     .keyword {
         color: #f92672;
     }
     .title {
-        color: #a6e22e;
+        color: yellowgreen;
     }
     .params {
-        color: #f8f8f2;
+        color: #58a;
     }
     .function{
         color: #f92672;
@@ -1162,7 +1163,7 @@ figure.highlight,
     // JAVA
     &.java .code {
         .title {
-            color: #a6e22e;
+            color: yellowgreen;
         }
         .javadoc {
             color: #969896;
@@ -1180,18 +1181,18 @@ figure.highlight,
                 color: #66d9ef;
             }
             .title{
-                color: #a6e22e;
+                color: yellowgreen
             }
         }
         .params {
-            color: #f8f8f2;
+            color: #058;
         }
     }
     // JavaScript
     &.js .code {
         .built_in,
         .title {
-            color: #a6e22e;
+            color: yellowgreen
         }
         .javadoc {
             color: #969896;
@@ -1214,13 +1215,13 @@ figure.highlight,
             color: #969896;
         }
         .string {
-            color: #e6db74;
+            color: #fb3;
         }
         .keyword {
             color: #f92672;
         }
         .params {
-            color: #f8f8f2;
+            color: #058;
         }
         .function{
             color: #f92672;
@@ -1229,7 +1230,7 @@ figure.highlight,
     &.javascript .code {
         .built_in,
         .title {
-            color: #a6e22e;
+            color: yellowgreen
         }
         .javadoc {
             color: #969896;
@@ -1252,13 +1253,13 @@ figure.highlight,
             color: #969896;
         }
         .string {
-            color: #e6db74;
+            color: #fb3;
         }
         .keyword {
             color: #f92672;
         }
         .params {
-            color: #f8f8f2;
+            color: #058;
         }
         .function{
             color: #f92672;
@@ -1577,7 +1578,7 @@ figure.highlight,
       a {
         display: inline-block;
         line-height: 25px;
-        font-size: 15px;
+        font-size: 16px;
         color: #555;
         border-bottom: none;
         float: left;
@@ -1779,7 +1780,7 @@ ul.search-result-list {
 }
 a.search-result-title {
   font-weight: bold;
-  font-size: 15px;
+  font-size: 16px;
   color: #555;
 }
 p.search-result {
